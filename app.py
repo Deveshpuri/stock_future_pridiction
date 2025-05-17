@@ -121,7 +121,7 @@ def main():
         # Title
         st.markdown('<h1 class="title fade-in">StockPulse</h1>', unsafe_allow_html=True)
         
-        # Theme toggle (simplified, as Streamlit doesn't natively support dynamic theme switching)
+        # Theme toggle (simplified)
         theme = st.session_state.get('theme', 'dark')
         if st.checkbox("Light Theme", value=theme == 'light'):
             st.session_state.theme = 'light'
@@ -178,7 +178,7 @@ def main():
                     st.error(f"Invalid period value: {str(e)}")
                     return
 
-                # Add .NS for Indian stocks if not present
+                # Add .NS for Indian stocks
                 if '.' not in ticker:
                     ticker = f"{ticker}.NS"
 
